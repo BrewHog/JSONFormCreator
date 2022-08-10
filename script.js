@@ -30,7 +30,7 @@ let exampleJSON = {
         "Option1",
         "Bugwah"
     ],
-    "assignee": "Justin Emilio",  
+    "assignee": "Justin Emilio",
 }
 
 class jsonForm {
@@ -86,7 +86,7 @@ class jsonForm {
 
         return output;
     }
-    
+
     createJSONTextArea(el) {
         //Give reference to 'this' for any out of scope functions
         let self = this;
@@ -183,7 +183,7 @@ class jsonForm {
     processObjectItemForForm(name, obj, parentEl) {
 
         for (let prop in obj) {
-            if (typeof obj[prop] == "object"){ continue; }
+            if (typeof obj[prop] == "object") { continue; }
             let newContainer = document.createElement("div");
             newContainer.style.width = "100%";
             newContainer.style.paddingLeft = "15px";
@@ -249,14 +249,14 @@ class jsonForm {
         newInput.classList.add("is-small");
         newInput.id = name;
 
-        for(let i=0;i<items.length;i++) {
+        for (let i = 0; i < items.length; i++) {
             let opt = document.createElement("option");
             opt.text = items[i];
             opt.value = items[i];
             newInput.add(opt);
-            
+
         }
-        
+
 
         let br = document.createElement("br");
         newContainer.appendChild(br);
@@ -307,19 +307,19 @@ class jsonForm {
                     //console.log("Arrays are not supported");
                     let newEl = document.createElement("div");
                     parentEl.appendChild(newEl);
-                    self.processArrayForForm(prop,obj[prop],newEl);
+                    self.processArrayForForm(prop, obj[prop], newEl);
                     continue;
                 } else {
                     let newTitle = document.createElement("span");
                     newTitle.style.fontSize = "18pt";
                     newTitle.innerText = prop;
                     parentEl.appendChild(newTitle);
-                    
+
                     let newEl = document.createElement("div");
                     newEl.style.paddingLeft = "15px";
                     parentEl.appendChild(newEl);
-                    
-                    
+
+
                     self.processObjectItemForForm(prop, obj[prop], newEl);
                     self.loopSubObj(obj[prop], currLevel, newEl);
 
