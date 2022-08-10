@@ -26,8 +26,8 @@ let exampleJSON = {
             "testing": "Aha"
         }
     },
-    "arraysWillBeOptionDropdown": [  // Arrays are treated as dropdowns
-        "Option1",
+    "ArraysSelectDropdowns": [  // Arrays are treated as dropdowns
+        "First option",
         "Bugwah"
     ],
     "assignee": "Justin Emilio",
